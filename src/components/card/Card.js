@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './card.css'
-import { getSwornMembers } from '../../cleaner'
+import { getSwornMembers } from '../../helpers'
 import PropTypes from 'prop-types';
 
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fetchHouseData } from '../../cleaner'
+import { fetchHouseData } from '../../helpers'
 import { storeHouseData } from '../../actions'
 import CardContainer from '../cardContainer/CardContainer'
 
@@ -40,7 +40,7 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  storeHouse: func.isRequired
+  storeHouse: PropTypes.func.isRequired
 };
 
 export const mapDispatchToProps = dispatch => ({ 

@@ -16,6 +16,10 @@ export class CardContainer extends Component {
   }
 }
 
+CardContainer.propTypes = {
+  data: PropTypes.array
+}
+
 export const mapStateToProps = state => ({ 
   data: state.HouseData
  });
