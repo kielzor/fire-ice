@@ -5,6 +5,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchHouseData } from '../../fetch'
 import { storeHouseData } from '../../actions'
+import CardContainer from '../cardContainer/CardContainer'
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
           {this.state.loading && <img src='https://78.media.tumblr.com/cb580cdcd118dc5465f0f1fb34ef0e38/tumblr_npd1m8L65f1uvbplno1_500.gif'/>}
         </div>
         <div className='Display-info'>
+          {!this.state.loading && <CardContainer />}
         </div>
       </div>
     );
