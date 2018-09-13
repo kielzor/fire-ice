@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Card } from '../card/Card'
+import './cardContainer.css'
 
 class CardContainer extends Component {
   getDisplayData = () => {
@@ -9,7 +10,7 @@ class CardContainer extends Component {
 
    render() {
     return (
-      <div>
+      <div className='card-container'>
         {this.props.data.map(data => {
         return <Card data={data} />
       })}
