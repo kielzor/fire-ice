@@ -16,8 +16,7 @@ export class App extends Component {
     }
   }
   componentDidMount = async () => {
-    const url = 'http://localhost:3001/api/v1/houses'
-    const houseData = await fetchHouseData(url)
+    const houseData = await fetchHouseData()
     await this.props.storeHouse(houseData)
     this.setState ({
       loading: false
