@@ -7,7 +7,9 @@ export const fetchHouseData = async () => {
 
 export const getSwornMembers = async members => {
   const memberData = await members.map(async (member) => {
-    const response = await fetch(member)
+    const splitMember = member.split('/')
+    const memberId = splitMember.pop()
+    const response = await fetch(`http://localhost:3001/api/v1/character/${memberId}`)
     const data = await response.json()
     return data
   })

@@ -7,8 +7,8 @@ export class CardContainer extends Component {
    render() {
     return (
       <div className='card-container'>
-        {this.props.data.map(data => {
-        return <Card data={data} />
+        {this.props.data.map((data, i) => {
+        return <Card key={i} data={data} />
       })}
       </div>
     )
