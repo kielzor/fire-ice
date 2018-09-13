@@ -8,12 +8,20 @@ import { storeHouseData } from '../../actions'
 
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      loading: true
+    }
+  }
   componentDidMount = async () => {
     const url = 'http://localhost:3001/api/v1/houses'
     const houseData = await fetchHouseData(url)
     await this.props.storeHouse(houseData)
+    this.setState ({
+      loading: false
+    })
   }
-
 
   render() {
     return (
@@ -21,10 +29,7 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          {/* <button onClick={() => {
-            this.props.fakeAction();
-            alert(this.props.fake);
-          }}> FAKE ACTION</button> */}
+          {this.state.loading && <img src='https://78.media.tumblr.com/cb580cdcd118dc5465f0f1fb34ef0e38/tumblr_npd1m8L65f1uvbplno1_500.gif'/>}
         </div>
         <div className='Display-info'>
         </div>
