@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './card.css'
 import { getSwornMembers } from '../../cleaner'
+import PropTypes from 'prop-types';
+
 
 export class Card extends Component {
   constructor () {
@@ -14,11 +16,15 @@ export class Card extends Component {
   handleClick = async (e) => {
     e.preventDefault()
     const clicked = !this.state.clicked
+
     this.setState ({
       clicked
     })
+
     if (this.state.members.length) return
+
     const members = await getSwornMembers(this.props.data.swornMembers)
+
     this.setState ({
       members
     })
@@ -43,4 +49,8 @@ export class Card extends Component {
       </div>
     )
   }
+
 }
+  Card.propTypes = {
+    props: PropTypes.object
+  }
