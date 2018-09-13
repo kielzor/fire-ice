@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import { Card } from '../card/Card'
 import './cardContainer.css'
 
-class CardContainer extends Component {
-  getDisplayData = () => {
-
-}
-
+export class CardContainer extends Component {
    render() {
     return (
       <div className='card-container'>
@@ -19,7 +15,7 @@ class CardContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({ 
+export const mapStateToProps = state => ({ 
   data: state.HouseData
  });
 

@@ -3,12 +3,12 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fetchHouseData } from '../../fetch'
+import { fetchHouseData } from '../../cleaner'
 import { storeHouseData } from '../../actions'
 import CardContainer from '../cardContainer/CardContainer'
 
 
-class App extends Component {
+export class App extends Component {
   constructor () {
     super()
     this.state = {
@@ -41,14 +41,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
   storeHouse: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
-
-const mapDispatchToProps = dispatch => ({ 
+export const mapDispatchToProps = dispatch => ({ 
   storeHouse: data => dispatch(storeHouseData(data))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
